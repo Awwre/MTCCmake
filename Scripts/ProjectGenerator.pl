@@ -58,7 +58,7 @@ for my $module_id (0 .. $number_of_modules - 1) {
 for my $module_id (0 .. $number_of_modules - 1) {
     make_path($project_dir_path."Module".$module_id."/include/");
     make_path($project_dir_path."Module".$module_id."/src/");
-    # Module Api header
+    ## Module Api header
     open my $api_header_fh, '>', $project_dir_path."Module".$module_id."/include/Module".$module_id."_Api.h" or die "Cannot open Module".$module_id."_Api.h: $!";
     print {$api_header_fh} ("#ifndef MODULE".$module_id."_API_H\n");
     print {$api_header_fh} ("#define MODULE".$module_id."_API_H\n");
@@ -67,7 +67,7 @@ for my $module_id (0 .. $number_of_modules - 1) {
     print {$api_header_fh} ("\n");
     print {$api_header_fh} ("#endif\n");
     close $api_header_fh;
-    # Module Callback header
+    ## Module Callback header
     open my $callback_header_fh, '>', $project_dir_path."Module".$module_id."/include/Module".$module_id."_CallbackApi.h" or die "Cannot open Module".$module_id."_CallbackApi.h: $!";
     print {$callback_header_fh} ("#ifndef MODULE".$module_id."_CALLBACKAPI_H\n");
     print {$callback_header_fh} ("#define MODULE".$module_id."_CALLBACKAPI_H\n");
@@ -76,7 +76,7 @@ for my $module_id (0 .. $number_of_modules - 1) {
     print {$callback_header_fh} ("\n");
     print {$callback_header_fh} ("#endif\n");
     close $callback_header_fh;
-    # Module Api
+    ## Module Api
     open my $api_fh, '>', $project_dir_path."Module".$module_id."/src/Module".$module_id."_Api.c" or die "Cannot open Module".$module_id."_Api.c: $!";
     print {$api_fh} ("#include \"Module".$module_id."/include/Module".$module_id."_Api.h\"\n");
     print {$api_fh} ("#include \"Module".$module_id."/include/Module".$module_id."_CallbackApi.h\"\n");
